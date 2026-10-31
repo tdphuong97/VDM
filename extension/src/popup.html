@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>VDM</title>
+<link rel="stylesheet" href="popup.css">
+<script src="shared.js"></script>
+<script src="popup.js" defer></script>
+</head>
+<body>
+<header class="head">
+  <img src="icons/icon-32.png" width="24" height="24" alt="">
+  <div class="who"><h1>VDM</h1><p id="status">Đang tìm phần mềm VDM…</p></div>
+  <span class="dot" id="dot"></span>
+</header>
+<section class="block" id="videoBlock" hidden>
+  <h2>Trên trang này</h2>
+  <ul class="list" id="mediaList"></ul>
+</section>
+<div class="row size-row">
+  <span><b>Cỡ nút tải trên trang</b><small>Kéo nút để đưa nó đi chỗ khác.</small></span>
+  <div class="seg" id="sizes" role="group" aria-label="Cỡ nút tải trên trang">
+    <button data-size="small">Nhỏ</button><button data-size="medium">Vừa</button><button data-size="large">Lớn</button>
+  </div>
+</div>
+<button class="link" id="resetPos">Đưa nút về chỗ cũ trên mọi trang</button>
+<label class="row">
+  <span><b>Tự bắt link tải</b><small>Tắt đi thì trình duyệt này tự tải như bình thường.</small></span>
+  <input type="checkbox" class="switch" id="capture">
+</label>
+<div class="foot">
+  <button class="btn" id="open">Mở cửa sổ VDM</button>
+  <button class="btn ghost" id="retry" hidden>Thử kết nối lại</button>
+</div>
+</body>
+</html>

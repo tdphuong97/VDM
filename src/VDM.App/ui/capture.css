@@ -1,0 +1,44 @@
+/* The dialog that appears when the browser hands VDM a link: the window is the sheet. */
+body { background: var(--surface); overflow: auto; }
+.cap { display: grid; gap: 20px; max-width: 640px; margin: 0 auto; padding: 20px 24px 24px; }
+.cap-head { display: flex; align-items: center; gap: 10px; }
+.cap-head h1 { font-size: 18px; line-height: 24px; font-weight: 600; }
+.cap-head .from { margin-left: auto; font-size: var(--fs-small); color: var(--muted); max-width: 50%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cap-body { display: grid; gap: 20px; }
+.cap-actions { display: flex; gap: 8px; padding-top: 4px; }
+.cap-actions .spacer { flex: 1; }
+.folder-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 20px; color: var(--muted); font-size: 13px; }
+.folder-note:empty { display: none; }
+.folder-note .check { display: inline-flex; align-items: center; gap: 8px; color: var(--text); cursor: pointer; }
+.folder-note input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+
+/* file */
+.file-facts { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: -8px; color: var(--muted); }
+.file-facts b { color: var(--text); font-weight: 500; }
+.file-size { font-size: var(--fs-kpi); line-height: 34px; font-weight: 400; letter-spacing: -0.01em; }
+.file-size .unit { font-size: 16px; }
+
+/* media */
+.media { display: flex; gap: 16px; align-items: flex-start; }
+.media .thumb { width: 160px; height: 90px; flex: none; border-radius: 6px; object-fit: cover; background: #1e2a2d; }
+.media h1 { font-size: 16px; line-height: 22px; font-weight: 600; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.media p { margin-top: 6px; color: var(--muted); }
+
+.choices { border: 1px solid var(--border); border-radius: var(--radius-card); overflow: hidden; }
+.choice { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 14px; cursor: pointer; transition: background-color var(--t-hover) ease; }
+.choice + .choice { border-top: 1px solid var(--rule); }
+.choice:hover { background: var(--raised); }
+.choice input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+.choice .lbl { flex: 1; font-weight: 500; }
+.choice .lbl small { font-weight: 400; color: var(--muted); font-size: 13px; margin-left: 6px; }
+.choice .size { color: var(--muted); font-variant-numeric: tabular-nums; }
+.choice:has(input:checked) { background: var(--raised); }
+.choice:has(input:checked) .size { color: var(--text); }
+
+.state { display: grid; gap: 10px; justify-items: start; padding: 16px; border: 1px dashed var(--control); border-radius: var(--radius-card); color: var(--muted); }
+.state.error { color: var(--text); }
+.state.error .why { color: var(--negative); }
+.loading-rows { display: grid; gap: 0; border: 1px solid var(--border); border-radius: var(--radius-card); }
+.loading-rows div { display: flex; align-items: center; justify-content: space-between; height: 44px; padding: 0 14px; }
+.loading-rows div + div { border-top: 1px solid var(--rule); }
+.loading-note { color: var(--muted); font-size: 13px; }

@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\VDM.Core\VDM.Core.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>VDM</AssemblyName>
+    <RootNamespace>VDM.App</RootNamespace>
+    <ApplicationIcon>Assets\vdm.ico</ApplicationIcon>
+    <Version>1.3.1</Version>
+    <Product>VDM</Product>
+    <Description>VDM - trình tải xuống miễn phí</Description>
+    <Copyright>Miễn phí, không thương mại</Copyright>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Both WPF and WinForms are referenced (for the tray icon); keep WPF's names unambiguous. -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4314.35" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\vdm.ico" />
+    <Content Include="ui\**\*" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <Content Include="..\..\extension\dist\**\*" Link="extension\%(RecursiveDir)%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <Content Include="..\..\deps\tools\*.*" Link="tools\%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+
+</Project>

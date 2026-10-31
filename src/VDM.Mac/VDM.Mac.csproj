@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- VDM for macOS: the shared core and pages in a Photino (WebKit) window.
+       Built into VDM.app on a Mac by build/build-mac.sh; it also runs on Windows for quick checks. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>VDM</AssemblyName>
+    <RootNamespace>VDM.Mac</RootNamespace>
+    <Version>1.3.1</Version>
+    <Product>VDM</Product>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Photino.NET" Version="4.0.16" />
+    <ProjectReference Include="..\VDM.Core\VDM.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- The same pages as the Windows app. -->
+    <Content Include="..\VDM.App\ui\**\*" Link="ui\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

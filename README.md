@@ -56,6 +56,9 @@ cài, mở lại, và file đang tải dở được tải tiếp. Tắt đượ
 **Gỡ cài đặt:** Cài đặt Windows → Ứng dụng → VDM → Gỡ cài đặt; sau đó gỡ extension VDM trong trang tiện
 ích của trình duyệt.
 
+**Máy Mac (chip Apple):** chưa có bộ cài dựng sẵn; tự build từ mã nguồn theo
+[hướng dẫn](docs/PHAT-TRIEN.md#build-trên-mac-chip-apple-m1-trở-lên).
+
 ## Cách dùng
 
 - **File:** bấm tải trên web như bình thường, VDM hiện hộp thoại để đổi tên hoặc nơi lưu rồi tải.
@@ -112,6 +115,6 @@ giấy phép [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
 
 ## Giấy phép
 
-VDM là phần mềm miễn phí, mã nguồn không công khai: dùng và chia sẻ bộ cài thoải mái, xem
-[LICENSE](LICENSE). VDM dùng các thành phần mã nguồn mở, liệt kê trong
-[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+VDM là phần mềm mã nguồn mở theo [giấy phép MIT](LICENSE): dùng, chia sẻ, sửa đổi thoải mái, chỉ cần giữ
+lại thông báo bản quyền. VDM dùng các thành phần mã nguồn mở khác, liệt kê trong
+[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). Muốn tự build hoặc góp mã: [hướng dẫn phát triển](docs/PHAT-TRIEN.md).

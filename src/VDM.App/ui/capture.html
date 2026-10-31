@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VDM</title>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="capture.css">
+<script src="icons.js"></script>
+<script src="format.js"></script>
+<script src="bridge.js"></script>
+<script src="capture.js" defer></script>
+</head>
+<body>
+<form class="cap" id="cap" novalidate>
+  <div class="cap-body" id="body"></div>
+  <div class="cap-folder field">
+    <label for="folder">Lưu vào</label>
+    <div class="joined"><input class="input" id="folder" readonly><button type="button" class="btn" id="changeFolder">Đổi thư mục</button></div>
+    <div class="folder-note" id="folderNote" aria-live="polite"></div>
+  </div>
+  <div class="cap-actions">
+    <button type="button" class="btn tall" id="cancel">Hủy</button>
+    <span class="spacer"></span>
+    <button type="button" class="btn tall" id="later">Tải sau</button>
+    <button type="submit" class="btn primary tall" id="go"><span data-icon="download"></span>Tải xuống</button>
+  </div>
+</form>
+</body>
+</html>

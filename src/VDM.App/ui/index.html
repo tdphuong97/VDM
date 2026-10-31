@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VDM</title>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="main.css">
+<script src="icons.js"></script>
+<script src="format.js"></script>
+<script src="bridge.js"></script>
+<script src="main.js" defer></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="Điều hướng">
+    <div class="brand">
+      <span id="brandMark"></span>
+      <div>
+        <div class="brand-name">VDM</div>
+        <div class="brand-sub">Trình tải xuống</div>
+      </div>
+      <button class="btn ghost icon close-nav" id="closeNav" aria-label="Đóng menu"></button>
+    </div>
+    <nav class="nav">
+      <a class="nav-item" href="#downloads" data-view="downloads"><span data-icon="download"></span>Tải xuống<span class="nav-count num" id="navFailed" hidden></span></a>
+      <a class="nav-item" href="#browsers" data-view="browsers"><span data-icon="browser"></span>Trình duyệt</a>
+      <a class="nav-item" href="#settings" data-view="settings"><span data-icon="sliders"></span>Cài đặt</a>
+    </nav>
+    <div class="disk" id="disk"></div>
+  </aside>
+
+  <header class="topbar">
+    <button class="btn ghost icon menu-toggle" id="openNav" aria-label="Mở menu"></button>
+    <span class="topbar-title" id="topbarTitle">Tải xuống</span>
+    <label class="search">
+      <span data-icon="search"></span>
+      <input id="search" type="search" placeholder="Tìm theo tên file hoặc trang web" autocomplete="off" spellcheck="false">
+      <kbd><span data-key="mod">Ctrl</span> K</kbd>
+    </label>
+    <a class="conn" id="conn" href="#browsers"></a>
+  </header>
+
+  <main class="sheet" id="sheet">
+    <div class="update-bar" id="updateBar" role="status" hidden></div>
+    <section class="view" id="view-downloads" aria-labelledby="h-downloads">
+      <div class="title-row">
+        <div class="title-text">
+          <h1 id="h-downloads">Tải xuống</h1>
+          <p class="sub" id="finding"></p>
+        </div>
+        <div class="title-actions">
+          <button class="btn tall" id="pauseAll"></button>
+          <button class="btn primary tall" id="addLink"><span data-icon="plus"></span>Thêm link</button>
+        </div>
+      </div>
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div class="toolbar">
+        <select class="input compact" id="typeFilter" aria-label="Loại file">
+          <option value="all">Mọi loại file</option>
+          <option value="video">Video</option>
+          <option value="audio">Nhạc</option>
+          <option value="archive">File nén và ISO</option>
+          <option value="program">Chương trình</option>
+          <option value="document">Tài liệu</option>
+          <option value="other">Khác</option>
+        </select>
+        <span class="spacer"></span>
+        <span class="total num" id="total"></span>
+      </div>
+      <div class="list-wrap" id="listWrap">
+        <table class="list" id="list">
+          <thead>
+            <tr>
+              <th class="c-name">Tên file</th>
+              <th class="c-progress">Tiến độ</th>
+              <th class="c-speed n">Tốc độ</th>
+              <th class="c-size n">Kích thước</th>
+              <th class="c-act"><span class="sr-only">Thao tác</span></th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div class="empty" id="empty" hidden></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-browsers" aria-labelledby="h-browsers" hidden>
+      <div class="title-row">
+        <div class="title-text">
+          <h1 id="h-browsers">Trình duyệt</h1>
+          <p class="sub" id="browsersSub"></p>
+        </div>
+      </div>
+      <div class="browsers-grid">
+        <div>
+          <h2 class="block-title">Extension VDM</h2>
+          <ul class="browser-list" id="browserList"></ul>
+        </div>
+        <div>
+          <h2 class="block-title">Trên trang web</h2>
+          <div class="preview" data-ui>
+            <div class="preview-video" aria-hidden="true">
+              <div class="preview-frame">
+                <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">
+                  <rect width="320" height="180" fill="#1d3035"/>
+                  <circle cx="92" cy="70" r="34" fill="#e3a25b"/>
+                  <path d="M0 132 70 96l46 22 64-44 76 46 64-30v90H0z" fill="#2c4a51"/>
+                  <path d="M0 150 88 122l70 18 82-34 80 30v44H0z" fill="#16262a"/>
+                </svg>
+              </div>
+              <div class="vdm-float"><span data-icon="download"></span>Tải video này</div>
+              <div class="preview-bar"><span></span></div>
+            </div>
+            <p class="preview-caption">Video nào đang phát cũng có nút này ở góc trên. Bấm vào để chọn tải video hay chỉ lấy âm thanh MP3.</p>
+            <div class="preview-catch" aria-hidden="true">
+              <span data-icon="download"></span>
+              <div>
+                <div class="pc-name">Win11_24H2_Vietnamese_x64.iso</div>
+                <div class="pc-sub">Bấm tải trên trang web, VDM nhận file thay trình duyệt</div>
+              </div>
+              <span class="pc-size num">5,8 GB</span>
+            </div>
+          </div>
+        </div>
+        <div class="ways">
+          <h2 class="block-title">Gửi link cho VDM</h2>
+          <table>
+            <thead><tr><th>Bạn làm</th><th>VDM làm</th></tr></thead>
+            <tbody>
+              <tr><td>Bấm nút tải trên trang web</td><td>Nhận mọi file thay trình duyệt và xếp vào thư mục theo loại (đổi được trong Cài đặt)</td></tr>
+              <tr><td>Nghe nhạc trên trang như NhacCuaTui</td><td>Hiện nút “Tải bài này” ở góc dưới, lưu MP3 kèm tên bài và ca sĩ</td></tr>
+              <tr><td>Bấm “Tải video này” trên video đang phát</td><td>Hỏi bạn muốn tải video ở chất lượng nào, hay chỉ lấy âm thanh MP3</td></tr>
+              <tr><td>Chuột phải vào link, chọn “Tải bằng VDM”</td><td>Tải cả những link không tự bắt được, như file ảnh hay file không có đuôi</td></tr>
+              <tr><td>Giữ <kbd data-key="alt">Alt</kbd> khi bấm nút tải</td><td>Bỏ qua lần đó, để trình duyệt tự tải như bình thường</td></tr>
+              <tr><td>Sao chép link rồi bấm <kbd data-key="mod">Ctrl</kbd> <kbd>V</kbd> trong cửa sổ VDM</td><td>Mở hộp thoại thêm link với link vừa sao chép</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-settings" aria-labelledby="h-settings" hidden>
+      <div class="title-row">
+        <div class="title-text">
+          <h1 id="h-settings">Cài đặt</h1>
+          <p class="sub" id="settingsSub"></p>
+        </div>
+        <span class="stamp" id="savedStamp" aria-live="polite"></span>
+      </div>
+      <div class="settings" id="settingsForm"></div>
+    </section>
+  </main>
+</div>
+<div id="layer"></div>
+</body>
+</html>

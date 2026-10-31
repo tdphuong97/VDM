@@ -1,0 +1,161 @@
+/* VDM base: the framed-sheet tokens (tasteskill seed 24340796), reset and the shared controls.
+   The frame is tinted from the product's teal; the sheet stays white. */
+@import url('fonts.css');
+
+:root {
+  --ground: #f1f6f6;
+  --surface: #ffffff;
+  --raised: #f2f5f6;
+  --active: #e6ebec;
+  --border: #e3e8e9;
+  --rule: #eef1f2;
+  --control: #cdd2d4;
+  --text: #131416;
+  --muted: #5a5e60;
+  --faint: #66696b;
+  --accent: #1b6c80;
+  --track: #dfe6e8;
+  --primary: #1d1f20;
+  --primary-ink: #ffffff;
+  --positive: #1e7b4f;
+  --negative: #c4242a;
+  --warning: #92400e;
+  --pill-positive-bg: #dcfae5; --pill-positive-ink: #04250e;
+  --pill-negative-bg: #ffedea; --pill-negative-ink: #831c1e;
+  --pill-warning-bg: #fffbeb; --pill-warning-ink: #92400e;
+  --pill-neutral-bg: #ebedee; --pill-neutral-ink: #353736;
+
+  --font: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --fs-title: 22px; --fs-section: 16px; --fs-kpi: 28px; --fs-body: 14px; --fs-small: 12px;
+
+  --radius-card: 8px;
+  --radius-control: 6px;
+  --radius-sheet: 16px;
+  --sheet-inset: 8px;
+  --sidebar-width: 228px;
+  --topbar: 48px;
+  --gap: 24px;
+  --pad: 24px;
+  --control-height: 32px;
+  --row-height: 64px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-press: 120ms; --t-hover: 150ms; --t-ui: 200ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body {
+  margin: 0; background: var(--ground); color: var(--text);
+  font: 400 var(--fs-body)/20px var(--font); -webkit-font-smoothing: antialiased;
+  overflow: hidden; user-select: none;
+}
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul[class], ol[class] { padding: 0; list-style: none; }
+img, svg { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+input, textarea, .selectable { user-select: text; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.num { font-variant-numeric: tabular-nums; }
+.unit { color: var(--muted); font-size: var(--fs-small); margin-left: 3px; }
+.muted { color: var(--muted); }
+.ic { width: 16px; height: 16px; flex: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex: none;
+  height: var(--control-height); padding: 0 12px; border-radius: var(--radius-control);
+  border: 1px solid var(--control); background: var(--surface); font-weight: 500; white-space: nowrap; cursor: pointer;
+  transition: background-color var(--t-hover) ease, border-color var(--t-hover) ease, transform var(--t-press) var(--ease-out);
+}
+.btn:hover { background: var(--raised); }
+.btn:active { transform: translateY(1px); }
+.btn.primary { background: var(--primary); color: var(--primary-ink); border-color: var(--primary); }
+.btn.primary:hover { background: #000; }
+.btn.ghost { border-color: transparent; background: transparent; }
+.btn.ghost:hover { background: var(--raised); }
+.btn.danger { color: var(--negative); }
+.btn.icon { width: var(--control-height); padding: 0; }
+.btn[disabled] { cursor: default; color: var(--muted); background: var(--raised); border-color: var(--border); transform: none; }
+.btn.tall { height: 36px; }
+
+/* ---------- fields ---------- */
+.input {
+  height: 38px; padding: 0 12px; border: 1px solid var(--control); border-radius: var(--radius-control);
+  background: var(--surface); min-width: 0; width: 100%;
+}
+.input::placeholder { color: var(--faint); }
+.input:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: var(--accent); }
+.joined { display: flex; min-width: 0; }
+.joined .input { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.joined .btn { height: 38px; border-top-left-radius: 0; border-bottom-left-radius: 0; margin-left: -1px; }
+select.input { appearance: none; padding-right: 32px; background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%235a5e60' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") right 10px center / 16px no-repeat; cursor: pointer; }
+
+.switch { appearance: none; flex: none; width: 32px; height: 20px; margin: 0; border-radius: 999px; background: var(--control); position: relative; cursor: pointer; transition: background-color var(--t-ui) ease; }
+.switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform var(--t-ui) var(--ease-out); }
+.switch:checked { background: var(--positive); }
+.switch:checked::after { transform: translateX(12px); }
+
+.segmented { display: inline-flex; width: max-content; max-width: 100%; padding: 2px; border-radius: 8px; background: var(--raised); }
+.segmented button { height: 30px; padding: 0 14px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--muted); font-weight: 500; cursor: pointer; transition: color var(--t-hover) ease; }
+.segmented button:hover { color: var(--text); }
+.segmented button[aria-pressed="true"] { background: var(--surface); color: var(--text); border-color: var(--border); }
+
+.stepper { display: inline-flex; align-items: center; border: 1px solid var(--control); border-radius: var(--radius-control); background: var(--surface); }
+.stepper button { width: 34px; height: 34px; border: 0; background: none; cursor: pointer; color: var(--muted); font-size: 18px; line-height: 1; }
+.stepper button:hover { color: var(--text); background: var(--raised); }
+.stepper output { min-width: 36px; text-align: center; font-weight: 500; font-variant-numeric: tabular-nums; }
+
+/* ---------- pills ---------- */
+.pill { display: inline-flex; align-items: center; gap: 6px; flex: none; height: 22px; padding: 0 8px; border-radius: 999px; font-size: var(--fs-small); font-weight: 500; background: var(--pill-neutral-bg); color: var(--pill-neutral-ink); white-space: nowrap; }
+.pill.pos { background: var(--pill-positive-bg); color: var(--pill-positive-ink); }
+.pill.neg { background: var(--pill-negative-bg); color: var(--pill-negative-ink); }
+
+/* ---------- the connection strip (the product's signature) ----------
+   One track; each connection's byte range is a slot placed at its real offset, filled as far as that
+   connection has come. Slots are separated by 2px seams in the surface colour. */
+.strip { position: relative; height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; }
+.strip .slot { position: absolute; top: 0; bottom: 0; }
+.strip .slot + .slot { border-left: 2px solid var(--surface); }
+.strip .fill { height: 100%; background: var(--accent); transition: width 480ms linear; }
+.strip.paused .fill { background: #7d8d91; }
+.strip.failed .fill { background: #b9a3a1; }
+.strip.big { height: 20px; border-radius: 4px; }
+.strip.big .slot + .slot { border-left-width: 3px; }
+
+/* ---------- floating things: menus and dialogs carry the only shadows ---------- */
+.menu {
+  position: fixed; z-index: 50; min-width: 220px; padding: 6px; border-radius: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(16, 24, 26, 0.14);
+}
+.menu button { display: flex; align-items: center; gap: 10px; width: 100%; height: 34px; padding: 0 10px; border: 0; border-radius: 6px; background: none; text-align: left; cursor: pointer; }
+.menu button .ic { color: var(--muted); }
+.menu button:hover, .menu button:focus-visible { background: var(--raised); outline: none; }
+.menu button.danger, .menu button.danger .ic { color: var(--negative); }
+.menu hr { border: 0; border-top: 1px solid var(--rule); margin: 6px 4px; }
+
+.scrim { position: fixed; inset: 0; z-index: 40; background: rgba(19, 20, 22, 0.28); display: grid; place-items: center; padding: 16px; }
+.dialog {
+  width: min(520px, 100%); border-radius: 12px; background: var(--surface); padding: 24px;
+  box-shadow: 0 20px 48px rgba(16, 24, 26, 0.22);
+}
+.dialog h2 { font-size: 18px; line-height: 24px; font-weight: 600; }
+.dialog p { margin-top: 6px; color: var(--muted); }
+.dialog .actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px; }
+.dialog .field { margin-top: 20px; }
+
+.field { display: grid; gap: 8px; }
+.field > label, .field > .label { font-weight: 500; }
+.field .hint { color: var(--muted); font-size: var(--fs-small); line-height: 16px; }
+.text-action { flex: none; padding: 0; border: 0; background: none; color: var(--text); font-weight: 500; cursor: pointer; text-underline-offset: 3px; }
+.text-action:hover { text-decoration: underline; }
+
+.skeleton { display: block; background: var(--raised); border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation: none !important; }
+}
