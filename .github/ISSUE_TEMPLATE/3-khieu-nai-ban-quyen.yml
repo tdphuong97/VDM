@@ -1,0 +1,31 @@
+name: Khiếu nại bản quyền / Copyright complaint
+description: Dành cho chủ sở hữu quyền tác giả. / For copyright holders.
+title: "[Bản quyền / Copyright] "
+labels: ["bản quyền"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        VDM là công cụ tải xuống chạy trên máy người dùng; repo này không lưu trữ hay chia sẻ nội dung của bên thứ ba.
+        Nếu bạn cho rằng VDM hoặc nội dung trong repo này vi phạm quyền của bạn, hãy cho biết chi tiết bên dưới.
+
+        VDM is a download tool that runs on users' computers; this repository does not host or share third-party content.
+        If you believe VDM or material in this repository infringes your rights, please describe it below.
+  - type: input
+    id: owner
+    attributes:
+      label: Chủ sở hữu quyền / Rights holder
+    validations:
+      required: true
+  - type: textarea
+    id: work
+    attributes:
+      label: Tác phẩm hoặc nội dung liên quan / The work concerned
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: Nội dung khiếu nại / What you are asking for
+    validations:
+      required: true

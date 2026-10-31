@@ -1,0 +1,50 @@
+GIẤY PHÉP SỬ DỤNG VDM (phần mềm miễn phí)
+Bản quyền (c) 2026 tdphuong97. Bảo lưu mọi quyền không được cho phép dưới đây.
+
+1. Được phép
+   - Dùng VDM miễn phí, cho cá nhân hay trong công việc, trên bao nhiêu máy cũng được.
+   - Chia sẻ bộ cài VDM nguyên bản (không sửa đổi) cho người khác, miễn là không thu tiền.
+
+2. Không được phép
+   - Bán VDM, hoặc thu tiền cho việc chia sẻ, cài đặt VDM.
+   - Sửa đổi, đóng gói lại bộ cài, gắn thêm quảng cáo hay phần mềm khác vào bộ cài.
+   - Giới thiệu VDM là sản phẩm của người khác, hoặc nói rằng tác giả bảo trợ cho sản phẩm của bạn.
+
+3. Thành phần mã nguồn mở
+   VDM kèm theo các thành phần mã nguồn mở (liệt kê trong THIRD-PARTY-NOTICES.md), mỗi thành phần theo
+   giấy phép riêng của nó. Giấy phép này KHÔNG hạn chế bất kỳ quyền nào mà các giấy phép đó trao cho bạn;
+   ví dụ: bạn được thay thế, sửa đổi và phân phối FFmpeg theo GNU GPL.
+
+4. Sử dụng hợp pháp
+   Bạn chịu trách nhiệm tuân thủ pháp luật về quyền tác giả và điều khoản sử dụng của các trang web khi
+   tải nội dung bằng VDM. VDM không lưu trữ, không chia sẻ nội dung và không vượt qua cơ chế chống sao chép.
+
+5. Không bảo hành
+   VDM được cung cấp "nguyên trạng", không kèm bất kỳ bảo đảm nào, rõ ràng hay ngụ ý, kể cả bảo đảm về
+   chất lượng thương mại, sự phù hợp cho một mục đích cụ thể hay không vi phạm quyền.
+
+6. Giới hạn trách nhiệm
+   Trong phạm vi pháp luật cho phép, tác giả không chịu trách nhiệm về bất kỳ thiệt hại nào, trực tiếp
+   hay gián tiếp (kể cả mất dữ liệu), phát sinh từ việc dùng hoặc không dùng được VDM.
+
+Khi có khác biệt giữa bản tiếng Việt và bản tiếng Anh dưới đây, bản tiếng Việt được ưu tiên.
+
+--------------------------------------------------------------------------------------------------------
+
+VDM LICENSE (freeware)
+Copyright (c) 2026 tdphuong97. All rights not expressly granted below are reserved.
+
+1. You may use VDM free of charge, privately or at work, on any number of computers, and share the
+   unmodified installer with others, as long as you do not charge for it.
+2. You may not sell VDM or charge for distributing or installing it; modify or repackage the installer or
+   bundle advertising or other software with it; or present VDM as someone else's product, or claim the
+   author endorses yours.
+3. VDM includes open-source components (listed in THIRD-PARTY-NOTICES.md), each under its own license.
+   This license does NOT restrict any right those licenses grant you; for example, you may replace,
+   modify and redistribute FFmpeg under the GNU GPL.
+4. You are responsible for complying with copyright law and with the terms of the websites you download
+   from. VDM does not host or share content and does not circumvent copy protection (DRM).
+5. VDM is provided "as is", without warranty of any kind, express or implied, including merchantability,
+   fitness for a particular purpose and non-infringement.
+6. To the extent permitted by law, the author is not liable for any damages, direct or indirect
+   (including data loss), arising from the use of, or inability to use, VDM.

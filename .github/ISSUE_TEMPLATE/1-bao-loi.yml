@@ -1,0 +1,42 @@
+name: Báo lỗi
+description: VDM không tải được, báo lỗi, hoặc làm sai điều gì đó.
+title: "[Lỗi] "
+labels: ["lỗi"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Cảm ơn bạn đã báo lỗi. **Đừng** dán mật khẩu, cookie hay thông tin đăng nhập vào đây: trang này công khai.
+  - type: input
+    id: version
+    attributes:
+      label: Phiên bản VDM
+      description: Xem ở Cài đặt → Cập nhật VDM.
+      placeholder: "1.3.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Trình duyệt
+      options: [Chrome, Edge, Cốc Cốc, Firefox, Khác]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Chuyện gì đã xảy ra?
+      description: Bạn đã làm gì, VDM báo gì. Video riêng tư thì không cần link, chỉ cần ghi trang (Facebook, TikTok…).
+      placeholder: "Bấm Tải video này trên một video Facebook trong bảng tin thì VDM báo…"
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link bị lỗi (nếu là link công khai)
+      placeholder: "https://…"
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Ảnh chụp màn hình
+      description: Kéo thả ảnh vào đây. Che thông tin cá nhân nếu có.

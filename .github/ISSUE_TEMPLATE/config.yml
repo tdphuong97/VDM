@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Câu hỏi thường gặp
+    url: https://github.com/tdphuong97/VDM#câu-hỏi-thường-gặp
+    about: Cảnh báo của Windows, video không tải được, tải video bị lỗi… xem ở đây trước nhé.
+  - name: Báo lỗ hổng bảo mật (riêng tư)
+    url: https://github.com/tdphuong97/VDM/security/advisories/new
+    about: Lỗ hổng bảo mật xin báo riêng, đừng mở Issue công khai.

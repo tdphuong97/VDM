@@ -1,0 +1,17 @@
+name: Góp ý tính năng
+description: Muốn VDM làm thêm điều gì đó.
+title: "[Góp ý] "
+labels: ["góp ý"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Bạn muốn VDM làm gì?
+      placeholder: "Muốn VDM tự tắt máy khi tải xong…"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Bạn sẽ dùng nó thế nào?
+      description: Kể một tình huống cụ thể giúp làm đúng ý bạn hơn.
