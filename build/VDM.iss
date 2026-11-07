@@ -39,6 +39,12 @@ Name: "vi"; MessagesFile: "Vietnamese.isl"
 Name: "desktopicon"; Description: "Tạo biểu tượng ngoài màn hình"; GroupDescription: "Thêm:"
 Name: "startup"; Description: "Chạy VDM cùng Windows (để luôn bắt được link từ trình duyệt)"; GroupDescription: "Thêm:"
 
+[InstallDelete]
+; Up to 1.3.1 the extension icons sat in a subfolder, the only thing Chrome's "Load unpacked" picker
+; showed inside the extension folder, so people chose it and got "manifest missing". Now at the root.
+Type: filesandordirs; Name: "{app}\extension\chromium\icons"
+Type: filesandordirs; Name: "{app}\extension\firefox\icons"
+
 [Files]
 Source: "..\dist\app\*"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
 

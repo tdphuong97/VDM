@@ -2,13 +2,13 @@
   "manifest_version": 3,
   "name": "VDM - Bắt link tải",
   "short_name": "VDM",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Gửi link tải và video đang phát sang phần mềm VDM trên máy để tải nhanh, tải tiếp được.",
-  "icons": { "16": "icons/icon-16.png", "32": "icons/icon-32.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png" },
+  "icons": { "16": "icon-16.png", "32": "icon-32.png", "48": "icon-48.png", "128": "icon-128.png" },
   "action": {
     "default_title": "VDM",
     "default_popup": "popup.html",
-    "default_icon": { "16": "icons/icon-16.png", "32": "icons/icon-32.png" }
+    "default_icon": { "16": "icon-16.png", "32": "icon-32.png" }
   },
   "background": { "scripts": ["shared.js", "background.js"] },
   "permissions": ["downloads", "cookies", "webRequest", "contextMenus", "storage", "alarms"],

@@ -147,8 +147,9 @@ def main():
         f.write(ico + blobs)
     print("wrote", ico_path)
 
-    icons = os.path.join(ROOT, "extension", "src", "icons")
-    os.makedirs(icons, exist_ok=True)
+    # Next to manifest.json, not in a subfolder: inside the extension folder Chrome's "Load unpacked"
+    # picker would show that subfolder alone, and people picked it instead of the extension folder.
+    icons = os.path.join(ROOT, "extension", "src")
     for size in EXT_SIZES:
         with open(os.path.join(icons, f"icon-{size}.png"), "wb") as f:
             f.write(pngs[size])

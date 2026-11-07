@@ -583,7 +583,7 @@
         steps = `<ol class="steps">
           <li>Mở trang tiện ích của ${b.name}.<div class="step-actions"><button class="btn" data-bact="page" data-b="${b.name}">${icon('external')}Mở trang tiện ích</button></div></li>
           <li>Bật <b>Chế độ dành cho nhà phát triển</b> (Developer mode) ở góc trên.</li>
-          <li>Bấm <b>Tải tiện ích đã giải nén</b> (Load unpacked) rồi chọn thư mục này.${W.folderTip}
+          <li>Bấm <b>Tải tiện ích đã giải nén</b> (Load unpacked) rồi chọn chính thư mục <b>chromium</b> này.${W.folderTip}
             <code>${esc(ext.chromium || '')}</code>
             <div class="step-actions"><button class="btn" data-bact="folder" data-b="${b.name}">${icon('folder')}Mở thư mục</button><button class="btn" data-bact="copy" data-text="${esc(ext.chromium || '')}">${icon('copy')}Sao chép đường dẫn</button></div></li>
           <li>Tải lại trang web đang mở. Dòng ${b.name} ở đây sẽ chuyển sang “Đã kết nối”.</li>

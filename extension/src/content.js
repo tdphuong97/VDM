@@ -240,8 +240,13 @@
     };
   }
 
+  // Closes the menu without toggleMenu(), whose update() would call hide() again, endlessly.
   function hide() {
-    if (host) { wrap.classList.remove('on'); host.style.display = 'none'; toggleMenu(false); }
+    if (!host) return;
+    wrap.classList.remove('on');
+    host.style.display = 'none';
+    menuOpen = false;
+    menu.hidden = true;
   }
 
   function setText(text) {

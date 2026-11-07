@@ -19,7 +19,7 @@ VDM kèm theo `ffmpeg.exe`, `ffprobe.exe` và các thư viện `av*.dll`, `sw*.d
 VDM, lấy nguyên bản từ bản dựng FFmpeg cho Windows do dự án yt-dlp phát hành (biến thể `win64-gpl-shared`).
 VDM chỉ gọi FFmpeg như một chương trình riêng, không sửa đổi nó.
 
-- Phiên bản đi kèm VDM 1.3.0 và 1.3.1: `N-128170-g0ea6606418-20261028`
+- Phiên bản đi kèm VDM 1.3.0 đến 1.3.2: `N-128170-g0ea6606418-20261028`
 - Mã nguồn FFmpeg: [github.com/FFmpeg/FFmpeg](https://github.com/FFmpeg/FFmpeg) (commit `0ea6606418`),
   hoặc [ffmpeg.org/download.html](https://ffmpeg.org/download.html)
 - Cách dựng và mã nguồn các thư viện đi kèm (x264, x265, libvpx, dav1d, opus, LAME…):
